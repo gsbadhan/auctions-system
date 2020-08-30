@@ -40,6 +40,7 @@ public class AuctionController {
 			@ApiResponse(response = String.class, code = 406, message = "Bid is rejected") })
 	public ResponseEntity<?> submitBid(@PathVariable(value = "itemCode") String itemCode, @RequestBody BidRequest body)
 			throws IOException, InterruptedException {
+		logger.info("http request={},itemCode={}", body, itemCode);
 		if (Strings.isNullOrEmpty(itemCode) || itemCode.length() > 8 || body.getAmount() == null
 				|| body.getAmount() < 0.0F)
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);

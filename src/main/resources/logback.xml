@@ -52,17 +52,17 @@
 	</appender>
 
 	<!-- Send logs to both console and file audit -->
-	<logger name="spring.web.client.MessageTracing.sent" level="${log.level}" additivity="false">
+	<logger name="spring.web.client.MessageTracing.sent" level="info" additivity="false">
  		<appender-ref ref="FILE-AUDIT" /> 
 		<appender-ref ref="STDOUT" />
 	</logger>
 	
-	<logger name="spring.web.client.MessageTracing.received" level="${log.level}" additivity="false">
+	<logger name="spring.web.client.MessageTracing.received" level="info" additivity="false">
 				<appender-ref ref="FILE-AUDIT" />
 		<appender-ref ref="STDOUT" />
 	</logger>
 	
-	<logger name="com" level="${log.level}" additivity="false">
+	<logger name="com" level="info" additivity="false">
 		<appender-ref ref="FILE-AUDIT" />
 		<appender-ref ref="STDOUT" />
 	</logger>

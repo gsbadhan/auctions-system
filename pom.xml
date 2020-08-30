@@ -14,7 +14,7 @@
 		<swagger>2.9.2</swagger>
 		<aero>4.4.17</aero>
 		<javatuples>1.2</javatuples>
-		<junit>4.13</junit>
+		<retryer>2.0.0</retryer>
 	</properties>
 
 	<parent>
@@ -58,14 +58,11 @@
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 		</dependency>
-
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit}</version>
-			<scope>test</scope>
+			<groupId>com.github.rholder</groupId>
+			<artifactId>guava-retrying</artifactId>
+			<version>${retryer}</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>io.springfox</groupId>

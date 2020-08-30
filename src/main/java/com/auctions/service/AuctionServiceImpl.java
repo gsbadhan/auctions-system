@@ -74,7 +74,8 @@ public class AuctionServiceImpl implements AuctionService {
 			logger.error("error occured in placeBidPrice for itemCode={},amount={}", itemCode, amount, e);
 		} finally {
 			logger.info("TRX status={},itemCode={},amount={},stepPrice={},highestAmount={}", status, itemCode, amount,
-					auctionItem.getValue1(), currentAuctionStatus.getHighestBidAmount());
+					auctionItem.getValue1(),
+					(currentAuctionStatus != null ? currentAuctionStatus.getHighestBidAmount() : null));
 		}
 		return status;
 	}

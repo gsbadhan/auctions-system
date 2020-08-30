@@ -1,28 +1,30 @@
-## Build application
+## auction system
+
+### Build application
 
 mvn clean install
 
-## Run application
+### Run application
 
 docker-compose up
 
-## Stop application
+### Stop application
 
 docker stop <pid>
 
 
-## swagger UI URL
+### swagger UI URL
 
 http://localhost:8080/swagger-ui.html
 
-## APIs and Websocket end-points
+### APIs and Websocket end-points
 
 POST - /v1/auction/{itemCode}/bid
 
 SUBSCRIBE - ws://localhost:8080/auction and Topic - /bids 
 
 
-## aerospike configurations
+### aerospike configurations
 
 create below namespace in /etc/aerospike/aerospike.conf and restart server.
 
@@ -41,7 +43,7 @@ namespace auctions {
 }
 
 
-#### queries:
+### queries:
 
 show namespaces
 
