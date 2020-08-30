@@ -1,0 +1,16 @@
+version: '2.1'
+networks:
+  test-net:
+    external: true
+
+services:
+  auctionService:
+    image: "amazoncorretto:11"
+    ports:
+      - "8080:8080"
+    networks:
+      - test-net
+    volumes:
+      - /Users/gurpreetsingh/eclipse-public/auctions-system/target/auctions-system.jar:/tmp/deploy/auctions-system.jar
+    entrypoint: java -Xms1G -Xmx1G -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:ParallelGCThreads=4 -XX:ConcGCThreads=1 -XX:InitiatingHeapOccupancyPercent=70 -Xdebug -Dlog.level=debug  -Djmx.rmi.port=12712 -Xrunjdwp:server=y,transport=dt_socket,address=*:8000,suspend=n -jar /tmp/deploy/auctions-system.jar --server.port=8080
+      
